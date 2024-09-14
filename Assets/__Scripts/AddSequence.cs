@@ -188,26 +188,26 @@ public class AddSequence : MonoBehaviour
 
     public void ClearColor()
     {
-        if (colorIndex != 0)
-        {
+        //if (colorIndex != 0)
+        //{
             foreach (var button in colorButtons)
             {
                 button.gameObject.GetComponent<Outline>().enabled = false;
             }
             colorIndex = 0;
-        }
+        //}
         
     }
 
     public void ClearColorEdit()
     {
-        if (colorIndex != 0)
-        {
+        //if (colorIndex != 0)
+        //{
             foreach (var button in colorButtonsEdit)
             {
                 button.gameObject.GetComponent<Outline>().enabled = false;
             }
-        }
+        //}
         
     }
 

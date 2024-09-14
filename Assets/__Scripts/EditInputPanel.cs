@@ -52,12 +52,15 @@ public class EditInputPanel : MonoBehaviour
 
     private void ShowColor(int color)
     {
+        foreach (var button in page2.colorButtonsEdit)
+        {
+            button.gameObject.GetComponent<Outline>().enabled = false;
+        }
         if (color != 0)
         {
             Debug.Log(color);
             page2.colorButtonsEdit[color-1].GetComponent<Outline>().enabled = true;
         }
-        
     }
     
 }
