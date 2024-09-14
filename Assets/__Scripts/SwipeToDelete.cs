@@ -105,6 +105,10 @@ public class SwipeToDelete : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             GameObject editButton = editMode.editButton;
             editButton.GetComponent<Button>().enabled = false;
             editButton.transform.GetChild(3).gameObject.SetActive(true);
+            if (editMode.isEditMode)
+            {
+                editMode.ToggleEditMode();
+            }
             if (editMode.playButton != null)
             {
                 editMode.playButton.GetComponent<Button>().enabled = false;
@@ -127,6 +131,7 @@ public class SwipeToDelete : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void DuplicateTimer()
     {
+        FindObjectOfType<AddSequence>().currentIndex++;
         GameObject newTimer = Instantiate(this.gameObject, this.transform.parent);
         newTimer.name = this.gameObject.name;
         newTimer.transform.SetSiblingIndex(this.transform.GetSiblingIndex() + 1);
